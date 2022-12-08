@@ -13,6 +13,13 @@ import { Formik } from "formik";
 const Login = () => {
   return (
     <>
+      <StatusBar
+        barStyle="dark-content"
+        hidden={false}
+        backgroundColor="#00BCD4"
+        translucent={true}
+      />
+
       <SafeAreaView style={styles.container}>
         <View style={styles.loginContainer}>
           <Text style={{ fontSize: 24, color: "purple", fontWeight: "bold" }}>
