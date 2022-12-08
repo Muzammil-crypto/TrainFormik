@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 15,
     lineHeight: 26,
-    color: "#F3B324",
+    color: "white",
   },
 });

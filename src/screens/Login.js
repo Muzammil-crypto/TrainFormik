@@ -17,7 +17,7 @@ const Login = () => {
       <StatusBar
         barStyle="dark-content"
         hidden={false}
-        backgroundColor="#00BCD4"
+        backgroundColor="#F3B324"
         translucent={true}
       />
 
@@ -45,8 +45,8 @@ const Login = () => {
             }}
           />
 
-          <Text style={{ fontSize: 24, color: "#F3B324", fontWeight: "bold" }}>
-            WELCOM BACK!
+          <Text style={{ fontSize: 18, color: "white", fontWeight: "700" }}>
+            Welcom back, Dear Customer!
           </Text>
         </View>
         <View style={styles.loginContainer}>
@@ -98,7 +98,7 @@ const Login = () => {
             )}
           </Formik>
         </View>
-        <Button mode={"outlined"}>>>>---------Go Next---------></Button>
+        {/* <Button mode={"outlined"}>>>>---------Go Next---------></Button> */}
       </SafeAreaView>
     </>
   );
