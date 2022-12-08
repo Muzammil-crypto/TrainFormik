@@ -1,10 +1,12 @@
-import { SafeAreaView, StyleSheet, View, Text, TextInput } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 import React from "react";
 import { Formik } from "formik";
 import Button from "../components/Button";
 import loginValidationSchema from "../schemas/formikSchema";
 import StatusBarComp from "../components/StatusBar";
 import HeaderCover from "../components/HeaderCover";
+import InputText from "../components/InputText";
+import ErrorMsg from "../components/ErrorMsg";
 
 const Login = () => {
   return (
@@ -21,13 +23,13 @@ const Login = () => {
             {({
               handleChange,
               handleBlur,
-              handleSubmit,
+
               values,
               errors,
               isValid,
             }) => (
               <>
-                <TextInput
+                <InputText
                   name="email"
                   placeholder="Email Address"
                   style={styles.textInputs}
@@ -36,12 +38,9 @@ const Login = () => {
                   value={values.email}
                   keyboardType="email-address"
                 />
-                {errors.email && (
-                  <Text style={{ fontSize: 10, color: "#2FBAE3" }}>
-                    {errors.email}
-                  </Text>
-                )}
-                <TextInput
+
+                {errors.email && <ErrorMsg value={errors.email} />}
+                <InputText
                   name="password"
                   placeholder="Password"
                   style={styles.textInputs}
@@ -50,11 +49,7 @@ const Login = () => {
                   value={values.password}
                   secureTextEntry
                 />
-                {errors.password && (
-                  <Text style={{ fontSize: 10, color: "#2FBAE3" }}>
-                    {errors.password}
-                  </Text>
-                )}
+                {errors.password && <ErrorMsg value={errors.password} />}
 
                 <Button mode={"contained"}>Submit</Button>
               </>
