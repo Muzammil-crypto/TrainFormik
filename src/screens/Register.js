@@ -8,7 +8,7 @@ import HeaderCover from "../components/HeaderCover";
 import InputText from "../components/InputText";
 import ErrorMsg from "../components/ErrorMsg";
 import SignupValidationSchema from "../schemas/signupValidationSchema";
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }) => {
   return (
     <>
       <StatusBarComp />
@@ -29,7 +29,7 @@ const RegisterScreen = () => {
               password: "",
               confirmPassword: "",
             }}
-            onSubmit={(values) => console.log(values)}
+            onSubmit={() => navigation.navigate("SplashSceen")}
           >
             {({ handleChange, handleBlur, values, errors, isValid }) => (
               <>

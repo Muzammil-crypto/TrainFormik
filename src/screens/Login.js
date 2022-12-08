@@ -9,7 +9,10 @@ import HeaderCover from "../components/HeaderCover";
 import InputText from "../components/InputText";
 import ErrorMsg from "../components/ErrorMsg";
 import ClickAbleText from "../components/ClickAbleText";
-const Login = () => {
+const Login = ({ navigation }) => {
+  const onSubmit = () => {
+    navigation.navigate("RegisterScreen");
+  };
   return (
     <>
       <StatusBarComp />
@@ -22,9 +25,16 @@ const Login = () => {
           <Formik
             validationSchema={loginValidationSchema}
             initialValues={{ email: "", password: "" }}
-            onSubmit={(values) => console.log(values)}
+            onSubmit={onSubmit}
           >
-            {({ handleChange, handleBlur, values, errors, isValid }) => (
+            {({
+              handleChange,
+              handleBlur,
+              values,
+              errors,
+              isValid,
+              handleSubmit,
+            }) => (
               <>
                 <InputText
                   name="email"
@@ -55,7 +65,9 @@ const Login = () => {
                     <ClickAbleText linkText="Don't have an account?" />
                   </TouchableOpacity>
                 </View>
-                <Button mode={"contained"}>Submit</Button>
+                <Button onPress={handleSubmit} mode={"contained"}>
+                  Submit
+                </Button>
               </>
             )}
           </Formik>
