@@ -11,6 +11,8 @@ import ErrorMsg from "../components/ErrorMsg";
 import ClickAbleText from "../components/ClickAbleText";
 const Login = ({ navigation }) => {
   const onSubmit = () => {
+    console.log("object");
+
     navigation.navigate("RegisterScreen");
   };
   return (
@@ -32,7 +34,7 @@ const Login = ({ navigation }) => {
               handleBlur,
               values,
               errors,
-              isValid,
+
               handleSubmit,
             }) => (
               <>

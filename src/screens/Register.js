@@ -10,6 +10,7 @@ import ErrorMsg from "../components/ErrorMsg";
 import SignupValidationSchema from "../schemas/signupValidationSchema";
 const RegisterScreen = ({ navigation }) => {
   const onSubmit = () => {
+    console.log("object");
     navigation.navigate("Login");
   };
   return (
@@ -34,7 +35,14 @@ const RegisterScreen = ({ navigation }) => {
             }}
             onSubmit={onSubmit}
           >
-            {({ handleChange, handleBlur, values, errors, handleSubmit }) => (
+            {({
+              handleChange,
+              handleBlur,
+              values,
+              errors,
+
+              handleSubmit,
+            }) => (
               <>
                 <InputText
                   name="fullName"
@@ -45,7 +53,7 @@ const RegisterScreen = ({ navigation }) => {
                   value={values.fullName}
                   keyboardType="fullName"
                 />
-                {errors.email && <ErrorMsg value={errors.fullName} />}
+                {errors.fullName && <ErrorMsg value={errors.fullName} />}
 
                 <InputText
                   name="email"
