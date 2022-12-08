@@ -2,7 +2,6 @@ import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
-  Button,
   View,
   Text,
   StatusBar,
@@ -14,10 +13,11 @@ import { Formik } from "formik";
 const Login = () => {
   return (
     <>
-      {/* <StatusBar barStyle="dark-content" /> */}
       <SafeAreaView style={styles.container}>
         <View style={styles.loginContainer}>
-          <Text>Login Screen</Text>
+          <Text style={{ fontSize: 24, color: "purple", fontWeight: "bold" }}>
+            Login Screen
+          </Text>
           <Formik
             validationSchema={loginValidationSchema}
             initialValues={{ email: "", password: "" }}
@@ -42,7 +42,7 @@ const Login = () => {
                   keyboardType="email-address"
                 />
                 {errors.email && (
-                  <Text style={{ fontSize: 10, color: "red" }}>
+                  <Text style={{ fontSize: 10, color: "purple" }}>
                     {errors.email}
                   </Text>
                 )}
@@ -56,15 +56,12 @@ const Login = () => {
                   secureTextEntry
                 />
                 {errors.password && (
-                  <Text style={{ fontSize: 10, color: "red" }}>
+                  <Text style={{ fontSize: 10, color: "purple" }}>
                     {errors.password}
                   </Text>
                 )}
-                <Button
-                  onPress={handleSubmit}
-                  title="Submit"
-                  style={styles.button}
-                />
+
+                <Button mode={"contained"}>Submit</Button>
               </>
             )}
           </Formik>
@@ -80,10 +77,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "pink",
   },
   loginContainer: {
     borderRadius: 18,
-    backgroundColor: "pink",
+    backgroundColor: "#F3B324",
     width: "80%",
     height: "50%",
     alignItems: "center",
@@ -91,19 +89,20 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
   textInputs: {
-    paddingLeft: "1%",
+    paddingLeft: "2%",
     height: 40,
     width: "80%",
-    margin: 10,
+    margin: 15,
     backgroundColor: "white",
-    borderColor: "green",
+    borderColor: "purple",
     borderWidth: StyleSheet.hairlineWidth,
-    borderRadius: 10,
+    borderRadius: 20,
   },
   button: {
     height: 40,
     width: "80%",
     margin: 10,
+    backgroundColor: "purple",
     borderColor: "green",
     borderWidth: StyleSheet.hairlineWidth,
     borderRadius: 10,
@@ -111,11 +110,12 @@ const styles = StyleSheet.create({
 });
 
 import * as yup from "yup";
+import Button from "../components/Button";
 
 const loginValidationSchema = yup.object().shape({
   email: yup
     .string()
-    .email("Please enter valid email")
+    .email("Enter a valid email address")
     .required("Email Address is Required"),
   password: yup
     .string()
