@@ -9,6 +9,9 @@ import InputText from "../components/InputText";
 import ErrorMsg from "../components/ErrorMsg";
 import SignupValidationSchema from "../schemas/signupValidationSchema";
 const RegisterScreen = ({ navigation }) => {
+  const onSubmit = () => {
+    navigation.navigate("Login");
+  };
   return (
     <>
       <StatusBarComp />
@@ -29,9 +32,9 @@ const RegisterScreen = ({ navigation }) => {
               password: "",
               confirmPassword: "",
             }}
-            onSubmit={() => navigation.navigate("SplashSceen")}
+            onSubmit={onSubmit}
           >
-            {({ handleChange, handleBlur, values, errors, isValid }) => (
+            {({ handleChange, handleBlur, values, errors, handleSubmit }) => (
               <>
                 <InputText
                   name="fullName"
@@ -79,7 +82,9 @@ const RegisterScreen = ({ navigation }) => {
                   <ErrorMsg value={errors.confirmPassword} />
                 )}
 
-                <Button mode={"contained"}>Submit</Button>
+                <Button onPress={handleSubmit} mode={"contained"}>
+                  Submit
+                </Button>
               </>
             )}
           </Formik>

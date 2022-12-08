@@ -1,6 +1,6 @@
 import React from "react";
 import Login from "./src/screens/Login";
-
+import SplashScreen from "./src/screens/SplashScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import RegisterScreen from "./src/screens/Register";
@@ -10,6 +10,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
+        {/* <Stack.Screen
+          name="SplashScreen"
+          component={SplashScreen}
+          options={{ headerShown: false }}
+        /> */}
         <Stack.Screen
           // navigationKey="navigation"
           name="Login"

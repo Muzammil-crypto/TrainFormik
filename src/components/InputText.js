@@ -8,6 +8,7 @@ export default function InputText({
   onBlur,
   value,
   keyboardType,
+  secureTextEntry,
 }) {
   return (
     <TextInput
@@ -18,6 +19,7 @@ export default function InputText({
       onBlur={onBlur}
       value={value}
       keyboardType={keyboardType}
+      secureTextEntry={secureTextEntry}
     />
   );
 }
