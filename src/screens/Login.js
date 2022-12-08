@@ -24,7 +24,7 @@ const Login = () => {
       <SafeAreaView style={styles.container}>
         <View
           style={{
-            marginTop: -190,
+            marginTop: -100,
             height: 490,
             width: "100%",
             backgroundColor: "#2FBAE3",
@@ -98,6 +98,7 @@ const Login = () => {
             )}
           </Formik>
         </View>
+        <Button mode={"outlined"}>>>>---------Go Next---------></Button>
       </SafeAreaView>
     </>
   );

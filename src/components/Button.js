@@ -8,7 +8,7 @@ export default function Button({ mode, style, ...props }) {
     <PaperButton
       style={[
         styles.button,
-        mode === "outlined" && { backgroundColor: "#F3B324" },
+        mode === "outlined" && { backgroundColor: "transparent" },
         style,
       ]}
       labelStyle={styles.text}
@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 15,
     lineHeight: 26,
-    color: "white",
+    color: "#F3B324",
   },
 });
