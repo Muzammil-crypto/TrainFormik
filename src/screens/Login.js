@@ -5,50 +5,23 @@ import {
   Image,
   View,
   Text,
-  StatusBar,
   TextInput,
 } from "react-native";
 import React from "react";
 import { Formik } from "formik";
+import Button from "../components/Button";
+import loginValidationSchema from "../schemas/formikSchema";
+import StatusBar from "../components/StatusBar";
+import StatusBarComp from "../components/StatusBar";
+import HeaderCover from "../components/HeaderCover";
 
 const Login = () => {
   return (
     <>
-      <StatusBar
-        barStyle="dark-content"
-        hidden={false}
-        backgroundColor="#F3B324"
-        translucent={true}
-      />
+      <StatusBarComp />
 
       <SafeAreaView style={styles.container}>
-        <View
-          style={{
-            marginTop: -100,
-            height: 490,
-            width: "100%",
-            backgroundColor: "#2FBAE3",
-            marginVertical: "-20%",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Image
-            style={{
-              height: 200,
-              width: "60%",
-              marginTop: 60,
-              marginBottom: 20,
-            }}
-            source={{
-              uri: "https://cdni.iconscout.com/illustration/free/thumb/about-us-2061897-1740019.png",
-            }}
-          />
-
-          <Text style={{ fontSize: 18, color: "white", fontWeight: "700" }}>
-            Welcom back, Dear Customer!
-          </Text>
-        </View>
+        <HeaderCover />
         <View style={styles.loginContainer}>
           <Formik
             validationSchema={loginValidationSchema}
@@ -130,27 +103,4 @@ const styles = StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth,
     borderRadius: 8,
   },
-  button: {
-    height: 40,
-    width: "80%",
-    margin: 10,
-    backgroundColor: "#2FBAE3",
-    borderColor: "green",
-    borderWidth: StyleSheet.hairlineWidth,
-    borderRadius: 10,
-  },
-});
-
-import * as yup from "yup";
-import Button from "../components/Button";
-
-const loginValidationSchema = yup.object().shape({
-  email: yup
-    .string()
-    .email("Enter a valid email address")
-    .required("Email Address is Required"),
-  password: yup
-    .string()
-    .min(8, ({ min }) => `Password must be at least ${min} characters`)
-    .required("Password is required"),
 });
