@@ -1,13 +1,13 @@
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import React from "react";
 import { Formik } from "formik";
 import Button from "../components/Button";
 import loginValidationSchema from "../schemas/formikSchema";
+import styles from "../utils/App.component.style";
 import StatusBarComp from "../components/StatusBar";
 import HeaderCover from "../components/HeaderCover";
 import InputText from "../components/InputText";
 import ErrorMsg from "../components/ErrorMsg";
-import styles from "../utils/Login.component.style";
 const Login = () => {
   return (
     <>
