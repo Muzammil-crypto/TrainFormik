@@ -1,17 +1,8 @@
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  Image,
-  View,
-  Text,
-  TextInput,
-} from "react-native";
+import { SafeAreaView, StyleSheet, View, Text, TextInput } from "react-native";
 import React from "react";
 import { Formik } from "formik";
 import Button from "../components/Button";
 import loginValidationSchema from "../schemas/formikSchema";
-import StatusBar from "../components/StatusBar";
 import StatusBarComp from "../components/StatusBar";
 import HeaderCover from "../components/HeaderCover";
 
@@ -19,7 +10,6 @@ const Login = () => {
   return (
     <>
       <StatusBarComp />
-
       <SafeAreaView style={styles.container}>
         <HeaderCover />
         <View style={styles.loginContainer}>
