@@ -3,5 +3,5 @@ import RegisterScreen from "./src/screens/Register";
 
 export default function App() {
   // return <Login />;
-  return <RegisterScreen />;
+  return <Login />;
 }

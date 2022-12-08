@@ -13,7 +13,12 @@ const RegisterScreen = () => {
     <>
       <StatusBarComp />
       <SafeAreaView style={styles.container}>
-        <HeaderCover />
+        <HeaderCover
+          heading="Hi there, Create your account here!"
+          uri={
+            "https://images.squarespace-cdn.com/content/v1/56898de5a128e63c0adac434/1559093342675-B3L2ZSKZU5Z5QYDHL148/HCD+As+Is+Journey+Map.png?format=1000w"
+          }
+        />
         <View style={styles.loginContainer}>
           <Formik
             validationSchema={SignupValidationSchema}

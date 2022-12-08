@@ -13,7 +13,10 @@ const Login = () => {
     <>
       <StatusBarComp />
       <SafeAreaView style={styles.container}>
-        <HeaderCover />
+        <HeaderCover
+          heading={"Welcom back, Dear Customer!"}
+          uri="https://cdni.iconscout.com/illustration/free/thumb/about-us-2061897-1740019.png"
+        />
         <View style={styles.loginContainer}>
           <Formik
             validationSchema={loginValidationSchema}

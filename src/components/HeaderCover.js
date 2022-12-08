@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
-export default function HeaderCover() {
+export default function HeaderCover({ uri, heading }) {
   return (
     <View style={styles.headerView}>
       <Image
@@ -11,11 +11,11 @@ export default function HeaderCover() {
           marginBottom: 20,
         }}
         source={{
-          uri: "https://cdni.iconscout.com/illustration/free/thumb/about-us-2061897-1740019.png",
+          uri: uri,
         }}
       />
 
-      <Text style={styles.headerText}>Welcom back, Dear Customer!</Text>
+      <Text style={styles.headerText}>{heading}</Text>
     </View>
   );
 }

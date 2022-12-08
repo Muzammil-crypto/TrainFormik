@@ -11,7 +11,7 @@ export default StyleSheet.create({
     borderRadius: 18,
     backgroundColor: "#F3B324",
     width: "90%",
-    height: "50%",
+    height: "55%",
     alignItems: "center",
     justifyContent: "center",
     alignContent: "center",
