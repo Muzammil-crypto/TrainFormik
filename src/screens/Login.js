@@ -7,7 +7,7 @@ import StatusBarComp from "../components/StatusBar";
 import HeaderCover from "../components/HeaderCover";
 import InputText from "../components/InputText";
 import ErrorMsg from "../components/ErrorMsg";
-
+import styles from "../utils/Login.component.style";
 const Login = () => {
   return (
     <>
@@ -20,14 +20,7 @@ const Login = () => {
             initialValues={{ email: "", password: "" }}
             onSubmit={(values) => console.log(values)}
           >
-            {({
-              handleChange,
-              handleBlur,
-
-              values,
-              errors,
-              isValid,
-            }) => (
+            {({ handleChange, handleBlur, values, errors, isValid }) => (
               <>
                 <InputText
                   name="email"
@@ -61,31 +54,3 @@ const Login = () => {
   );
 };
 export default Login;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#2FBAE3",
-  },
-  loginContainer: {
-    borderRadius: 18,
-    backgroundColor: "#F3B324",
-    width: "90%",
-    height: "50%",
-    alignItems: "center",
-    justifyContent: "center",
-    alignContent: "center",
-  },
-  textInputs: {
-    paddingLeft: "2%",
-    height: 40,
-    width: "80%",
-    margin: 15,
-    backgroundColor: "white",
-    borderColor: "#2FBAE3",
-    borderWidth: StyleSheet.hairlineWidth,
-    borderRadius: 8,
-  },
-});
