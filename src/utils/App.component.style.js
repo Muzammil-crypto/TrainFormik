@@ -26,4 +26,11 @@ export default StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth,
     borderRadius: 8,
   },
+  clickAbleText: {
+    fontSize: 11,
+    color: "white",
+    marginLeft: 10,
+    marginRight: 10,
+    fontStyle: "italic",
+  },
 });

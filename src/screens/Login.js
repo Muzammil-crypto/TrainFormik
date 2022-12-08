@@ -1,4 +1,4 @@
-import { SafeAreaView, View } from "react-native";
+import { SafeAreaView, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Formik } from "formik";
 import Button from "../components/Button";
@@ -8,6 +8,7 @@ import StatusBarComp from "../components/StatusBar";
 import HeaderCover from "../components/HeaderCover";
 import InputText from "../components/InputText";
 import ErrorMsg from "../components/ErrorMsg";
+import ClickAbleText from "../components/ClickAbleText";
 const Login = () => {
   return (
     <>
@@ -46,7 +47,14 @@ const Login = () => {
                   secureTextEntry
                 />
                 {errors.password && <ErrorMsg value={errors.password} />}
-
+                <View style={{ flexDirection: "row" }}>
+                  <TouchableOpacity>
+                    <ClickAbleText linkText="Forgot Password?" />
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <ClickAbleText linkText="Don't have an account?" />
+                  </TouchableOpacity>
+                </View>
                 <Button mode={"contained"}>Submit</Button>
               </>
             )}
