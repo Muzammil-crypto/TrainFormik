@@ -98,7 +98,6 @@ const Login = () => {
             )}
           </Formik>
         </View>
-        {/* <Button mode={"outlined"}>>>>---------Go Next---------></Button> */}
       </SafeAreaView>
     </>
   );
