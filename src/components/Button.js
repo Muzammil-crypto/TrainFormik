@@ -20,9 +20,9 @@ export default function Button({ mode, style, ...props }) {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "purple",
+    backgroundColor: "#2FBAE3",
     borderRadius: 24,
-    borderColor: "purple",
+    borderColor: "#2FBAE3",
     width: "80%",
     marginVertical: 10,
     paddingVertical: 2,

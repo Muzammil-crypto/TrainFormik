@@ -2,6 +2,7 @@ import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
+  Image,
   View,
   Text,
   StatusBar,
@@ -21,10 +22,34 @@ const Login = () => {
       />
 
       <SafeAreaView style={styles.container}>
-        <View style={styles.loginContainer}>
-          <Text style={{ fontSize: 24, color: "purple", fontWeight: "bold" }}>
-            Login Screen
+        <View
+          style={{
+            marginTop: -190,
+            height: 490,
+            width: "100%",
+            backgroundColor: "#2FBAE3",
+            marginVertical: "-20%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Image
+            style={{
+              height: 200,
+              width: "60%",
+              marginTop: 60,
+              marginBottom: 20,
+            }}
+            source={{
+              uri: "https://cdni.iconscout.com/illustration/free/thumb/about-us-2061897-1740019.png",
+            }}
+          />
+
+          <Text style={{ fontSize: 24, color: "#F3B324", fontWeight: "bold" }}>
+            WELCOM BACK!
           </Text>
+        </View>
+        <View style={styles.loginContainer}>
           <Formik
             validationSchema={loginValidationSchema}
             initialValues={{ email: "", password: "" }}
@@ -49,7 +74,7 @@ const Login = () => {
                   keyboardType="email-address"
                 />
                 {errors.email && (
-                  <Text style={{ fontSize: 10, color: "purple" }}>
+                  <Text style={{ fontSize: 10, color: "#2FBAE3" }}>
                     {errors.email}
                   </Text>
                 )}
@@ -63,7 +88,7 @@ const Login = () => {
                   secureTextEntry
                 />
                 {errors.password && (
-                  <Text style={{ fontSize: 10, color: "purple" }}>
+                  <Text style={{ fontSize: 10, color: "#2FBAE3" }}>
                     {errors.password}
                   </Text>
                 )}
@@ -84,12 +109,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "pink",
+    backgroundColor: "#DEE0E4",
   },
   loginContainer: {
     borderRadius: 18,
     backgroundColor: "#F3B324",
-    width: "80%",
+    width: "90%",
     height: "50%",
     alignItems: "center",
     justifyContent: "center",
@@ -101,15 +126,15 @@ const styles = StyleSheet.create({
     width: "80%",
     margin: 15,
     backgroundColor: "white",
-    borderColor: "purple",
+    borderColor: "#2FBAE3",
     borderWidth: StyleSheet.hairlineWidth,
-    borderRadius: 20,
+    borderRadius: 8,
   },
   button: {
     height: 40,
     width: "80%",
     margin: 10,
-    backgroundColor: "purple",
+    backgroundColor: "#2FBAE3",
     borderColor: "green",
     borderWidth: StyleSheet.hairlineWidth,
     borderRadius: 10,
