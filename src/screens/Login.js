@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#DEE0E4",
+    backgroundColor: "#2FBAE3",
   },
   loginContainer: {
     borderRadius: 18,
